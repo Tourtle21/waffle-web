@@ -10,15 +10,12 @@ import Input from '../Styles/Input'
 import Button from '../Styles/Button';
 const ContactForm = (props) => {
   const [state, handleSubmit] = useForm("xzbyewko");
-  const onSubmit = (e) => {
-    props.submit();
-    handleSubmit(e);
-  }
   if (state.succeeded) {
+      props.submit();
       return <p>Thanks for joining!</p>;
   }
   return (
-      <Form onSubmit={(e) => onSubmit(e)}>
+      <Form onSubmit={handleSubmit}>
         <Header className="blue">Want a beautiful website? Fill in this form :)</Header>
       <div className="inputs">
       <div className="infoInputs">
