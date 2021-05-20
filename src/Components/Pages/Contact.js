@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from '../Usables/Forms/Form';
+import ContactForm from '../Usables/ContactForm';
 import { useHistory } from "react-router-dom";
 import axios from 'axios';
 
@@ -7,19 +8,14 @@ const Contact = (props) => {
     let history = useHistory();
 
     const onSubmit = (data) => {
-        console.log(data);
-        axios.post('/email', data)
-        .then(() => {
-            history.push('/');
-        }).catch((err) => {
-            console.log(err);
-        })
+        history.push('/');
     }
 
     return (
         <main>
             <div className="container" id="contact">
-                <Form submit={onSubmit} inputs={["Name", "Phone", "Email"]} idNames= {["name", "phone", "email"]}></Form>
+                {/* <Form submit={onSubmit} inputs={["Name", "Phone", "Email"]} idNames= {["name", "phone", "email"]}></Form> */}
+                <ContactForm submit={onSubmit} />
             </div>
         </main>
 

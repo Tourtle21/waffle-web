@@ -1,12 +1,12 @@
 import styled from "styled-components";
-const Form = styled.div`
+const Form = styled.form`
     display:flex;
     flex-direction:column;
     align-items: center;
     justify-content:center;
     height:500px;
     width:800px;
-    font-family: 'Comfortaa';
+    color:black;
   background-color: white;
   margin: 1em;
 `;

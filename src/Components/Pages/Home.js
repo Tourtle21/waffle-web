@@ -9,18 +9,14 @@ import timeline from '../../Assets/TimeLine.png';
 import face from '../../Assets/Face.png';
 import Header from '../Styles/Header'
 import Form from '../Usables/Forms/Form';
+import ContactForm from '../Usables/ContactForm';
 import axios from 'axios';
 
 const Home = (props) => {
     const [submitted, setSubmitted] = useState(false);
 
     const onSubmit = (data) => {
-        axios.post('/email', data)
-        .then(() => {
-            setSubmitted(true);
-        }).catch((err) => {
-            console.log(err);
-        })
+        setSubmitted(true);
     }
 
     return (
@@ -41,9 +37,9 @@ const Home = (props) => {
                     <div className="flex-row">
                         <Header className="blue">Goals</Header>
                         <div className="goalParalax">
-                            <img width="300px" src={goal} />
+                            <img alt='img' width="300px" src={goal} />
                             <Parallax className="paralax" y={[100, -300]} x={[80, -30]} tagOuter="figure">
-                                <img width="50px" src={ball} />
+                                <img alt='img' width="50px" src={ball} />
                             </Parallax>
                         </div>
                     </div>
@@ -52,12 +48,12 @@ const Home = (props) => {
                             <div class='stage'>
                                 <div className='stageImgOne'> 
                                     <Parallax className="paralax" x={[-20, -75]} tagOuter="figure" >
-                                        <img className='stageImgTwo' width="150px" src={stageMiddle} />
+                                        <img alt='img' className='stageImgTwo' width="150px" src={stageMiddle} />
                                     </Parallax>
                                     <Parallax className="paralax" x={[0, 75]} tagOuter="figure">
-                                        <img className='stageImgThree right' width="150px" src={stageMiddle} />
+                                        <img alt='img' className='stageImgThree right' width="150px" src={stageMiddle} />
                                     </Parallax>
-                                    <img className='stageImgFour' width="300px" src={stageFront} />
+                                    <img alt='img' className='stageImgFour' width="300px" src={stageFront} />
                                 </div>
                             </div>
                         </div>
@@ -66,16 +62,17 @@ const Home = (props) => {
                     <div className="flex-row">
                         <Header className="blue">And Timeline</Header>
                         <div className="timelineParalax">
-                            <img width="300px" src={timeline} />
+                            <img alt='img' width="300px" src={timeline} />
                             <Parallax className="paralax" x={[-50, 50]} tagOuter="figure">
-                                <img class="face" width="50px" src={face} />
+                                <img alt='img' class="face" width="50px" src={face} />
                             </Parallax>
                         </div>
                     </div>
                 </div>
             </div>
             {!submitted ? <div className="container">
-                <Form submit={onSubmit} inputs={["Name", "Phone", "Email"]} idNames= {["name", "phone", "email"]}></Form>
+                {/* <Form submit={onSubmit} inputs={["Name", "Phone", "Email"]} idNames= {["name", "phone", "email"]}></Form> */}
+                <ContactForm submit={onSubmit} />
             </div>: <> </>}
         </main>
 
