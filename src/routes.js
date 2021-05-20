@@ -6,7 +6,7 @@ import Contact from './Components/Pages/Contact';
 
 export default (
     <Switch>
-        <Route exact path='/' component={Home} />
+        <Route path='/' component={Home} />
         <Route exact path='/contact' component={Contact} />
     </Switch>
 );
