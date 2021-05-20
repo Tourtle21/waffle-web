@@ -1,0 +1,252 @@
+html{
+  width: 100%;
+  height: 100%;
+  font-family: 'Comfortaa';
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-family: 'Comfortaa';
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+.app {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+.inputs {
+display: flex;
+flex-direction: row;
+align-items: center;
+}
+
+.title {
+  margin-left: 10%;
+  margin-top: 40px;
+  color:rgb(0, 0, 49);
+  align-self: flex-start;
+}
+.smallText {
+  color:rgb(0, 0, 49);
+  font-size: 1em;
+  width: 70%;
+  text-align: left;
+  align-self: flex-start;
+  margin-left: 10%;
+  font-family: 'Comfortaa';
+}
+#contact{
+  height:100%;
+}
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  /* padding: 50px; */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-bottom:10px solid black;
+}
+.hero {
+  
+  width: 100%;
+  background-image:url(./../Assets/waffle.jpg);
+  background-size:cover;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-bottom:10px solid black;
+}
+.blue-back{
+  background-color:rgb(0, 0, 49, .8);
+  width: 100%;
+  height: 400px;
+  padding-top: 80px;
+  padding-bottom:60px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.paralaxs {
+  padding-top:40px;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+  padding-bottom:40px;
+}
+
+.audienceParalax {
+  display: flex;
+}
+.timelineParalax {
+  margin-top:60px;
+  display: flex;
+  flex-direction: column;
+}
+.stage {
+  overflow: hidden;
+}
+.face {
+  position: relative;
+  top: -64px;
+}
+.stageImgOne {
+  position: relative;
+  background: url('./../Assets/StageBack.png');
+  width: 300px;
+  height: 200px;
+  background-size: 100%;
+}
+.stageImgTwo {
+  position: relative;
+  top: -5px;
+}
+.stageImgThree {
+  position: relative;
+  top: -160px;
+}
+.stageImgFour {
+  position: relative;
+  top: -320px;
+}
+.right {
+  margin-left: 85px;
+}
+
+.goals {
+  justify-content: space-around;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flex-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+  width:70vw;
+  padding-bottom:20px;
+  margin-bottom:20px;
+
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+@media only screen and (max-width: 600px) {
+  .inputs{
+    flex-direction:column;
+  }
+  .container{
+    height:100vw;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.blue{
+  color: #282c34;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.nav {
+  position: fixed;
+  width: 100%;
+  z-index:1;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 2% 10%;
+  height: 80px;
+  background: black;
+  color: white;
+  padding-bottom: 3px;
+}
+
+.logo {
+  font-size: 30px;
+  font-family: 'Comfortaa';
+  color:white;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+
+  width: 40%;
+  height: 100%;
+}
+.links > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+  margin-right: 5px;
+}
+.getStarted {
+  height:50px;
+  width:200px;
+  border-radius:10px;
+  margin-top:40px;
+  border: 5px solid lightgreen;
+  background: transparent;
+  color: white;
+  font-weight:2;
+  cursor: pointer;
+}
