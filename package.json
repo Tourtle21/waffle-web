@@ -1,6 +1,6 @@
 {
   "name": "waffle-tech",
-  "homepage": "https://Tourtle21.github.io/waffle-web",
+  "homepage": "https://Tourtle21.github.io/waffle-web/",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3030",
