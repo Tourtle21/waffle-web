@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './extra/reportWebVitals';
 import {HashRouter, BrowserRouter} from 'react-router-dom';
 import { ParallaxProvider } from 'react-scroll-parallax';
-const Router = HashRouter;
+const Router = process.env.NODE_ENV === 'development' ? HashRouter : BrowserRouter;
 
 ReactDOM.render(
   <React.StrictMode>
