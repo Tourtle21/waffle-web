@@ -9,7 +9,7 @@ const Form = (props) => {
 
     return (
         <StyledForm>
-            <Header className="blue">Want a beautiful website? Fill in this form :)</Header>
+            <Header className="blue">Let's Get Started</Header>
             <div className="inputs">
                 <div className='infoInputs'>
                     {
@@ -20,7 +20,7 @@ const Form = (props) => {
                 </div>
             <textarea rows="10" cols="30" onChange={(e) => setSubmitted({...submitted, description:e.target.value})} placeholder="description"></textarea>
             </div>
-            <Button onClick={() => props.submit(submitted)} type="submit" value="Submit"/>
+            <Button onClick={() => props.submit(submitted)} type="submit" value="Submit">Submit</Button>
         </StyledForm>
     )
 };

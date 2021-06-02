@@ -5,10 +5,21 @@ const Form = styled.form`
     align-items: center;
     justify-content:center;
     height:500px;
-    width:800px;
+    width:100vw;
     color:black;
-  background-color: white;
-  margin: 1em;
+    padding:40px;
+    position: relative;
+  background-color: #f3f3f3;
+  font-family: 'Roboto', sans-serif;
+  @media (max-width: 600px) {
+    height:600px;
+  }
+  & > div{ & textarea{
+    font-family: 'Roboto', sans-serif;
+    padding:15px;
+    height:80%;
+  }
+}
 `;
 
 export default Form;

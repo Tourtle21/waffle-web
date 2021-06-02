@@ -4,7 +4,7 @@ display: flex;
 align-items:center;
 justify-content: center;
 color: white;
-font-family: 'Comfortaa';
+font-family: 'Roboto', sans-serif;
 background-color: #0d6eb5;
 width: 35%;
 height:35px;

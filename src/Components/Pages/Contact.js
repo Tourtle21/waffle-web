@@ -14,8 +14,7 @@ const Contact = (props) => {
     return (
         <main>
             <div className="container" id="contact">
-                {/* <Form submit={onSubmit} inputs={["Name", "Phone", "Email"]} idNames= {["name", "phone", "email"]}></Form> */}
-                <ContactForm submit={onSubmit} />
+            <ContactForm submit={onSubmit} inputs={["Name", "Phone", "Email"]} idNames= {["name", "phone", "email"]}></ContactForm>
             </div>
         </main>
 

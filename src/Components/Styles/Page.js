@@ -6,7 +6,7 @@ justify-content:center;
 background-color:#Efefef;
 width:100vw;
 height: 100vh;
-font-family: 'Comfortaa';
+font-family: 'Roboto', sans-serif;
 `;
 
 export default Page;

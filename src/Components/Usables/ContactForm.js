@@ -16,26 +16,26 @@ const ContactForm = (props) => {
   }
   return (
       <Form onSubmit={handleSubmit}>
-        <Header className="blue">Want a beautiful website? Fill in this form :)</Header>
+        <Header className="blue">Let's Get Started</Header>
       <div className="inputs">
       <div className="infoInputs">
       <Input
         id="name"
         type="name" 
         name="name"
-        placeholder="name"
+        placeholder="Name"
       />
       <Input
         id="phone number"
         type="phone number" 
         name="phone number"
-        placeholder="phone number"
+        placeholder="Phone"
       />
       <Input
         id="email"
         type="email" 
         name="email"
-        placeholder="email"
+        placeholder="Email"
       />
       <ValidationError 
         prefix="Email" 
@@ -48,6 +48,7 @@ const ContactForm = (props) => {
         cols="30"
         id="message"
         name="message"
+        placeholder="Description"
       />
       <ValidationError 
         prefix="Message" 

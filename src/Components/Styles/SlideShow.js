@@ -12,7 +12,7 @@ margin: 50px auto;
     left: 10px; 
     right: 10px; 
     bottom: 10px;
-    font-family: 'Comfortaa';
+    font-family: 'Roboto', sans-serif;
   }
 `;
 

@@ -11,7 +11,7 @@ const Input = styled.input`
   border-radius: 4px;
   border: 1px solid lightgrey;
   outline-color:grey;
-  font-family: 'Comfortaa';
+  font-family: 'Roboto', sans-serif;
   
 `;
 

@@ -2,78 +2,61 @@ import React, {useState, useEffect} from 'react';
 import { Parallax } from 'react-scroll-parallax';
 import goal from '../../Assets/goal.png';
 import ball from '../../Assets/SoccerBall.png';
+import trulyYours from '../../Assets/TrulyYours.mov';
+import yourstruly from '../../Assets/yourstruly.jpeg';
 import stageBack from '../../Assets/StageBack.png';
 import stageFront from '../../Assets/StageFront.png';
 import stageMiddle from '../../Assets/StageMiddle.png';
 import timeline from '../../Assets/TimeLine.png';
 import face from '../../Assets/Face.png';
 import Header from '../Styles/Header'
-import Form from '../Usables/Forms/Form';
 import ContactForm from '../Usables/ContactForm';
+import Popup from "reactjs-popup";
 import axios from 'axios';
+import Hero from '../Usables/Hero';
+import Cards from '../Usables/Cards';
 
 const Home = (props) => {
     const [submitted, setSubmitted] = useState(false);
+    const [open, setOpen] = useState(false);
+    const closeModal = () => {setOpen(false); document.body.style.overflow = "visible"};
 
     const onSubmit = (data) => {
-        setSubmitted(true);
+        axios.post('/email', data)
+        .then(() => {
+            setSubmitted(true);
+        }).catch((err) => {
+            console.log(err);
+        })
+    }
+
+    const resetVideo = (e) => {
+        e.target.currentTime = 0;
+        e.target.pause();
     }
 
     return (
         <main>
-            <div className="hero">
-                <div className="blue-back">
-                <Header>Custom Web</Header>
-                <Header><h2>Design and Development</h2></Header>
-                <button onClick={() => window.scrollTo(0,document.body.scrollHeight)} className="getStarted">Get Started</button>
-                </div>
+            <Hero/>
+
+            <Cards />
+            <div className="cont">
+                <Header className="start">Our Work</Header>
+                
+            <video className="video" onClick={(e) => {setOpen(o => !o); document.body.style.overflow = "hidden";}} onMouseEnter={(e) => {e.target.play(); e.target.playbackRate = 10;}} onMouseLeave={(e) => resetVideo(e)} width="320" height="240" muted="muted" >
+      <source src={trulyYours} type='video/mp4' />
+    </video>
+    <Popup open={open} closeOnDocumentClick onClose={closeModal}>
+    <div className="modal">
+    <button className="close" onClick={closeModal}>
+                &times;
+                </button>
+          </div>
+      </Popup>
             </div>
-            <div className="container goals">
-                <div class="text">
-                    <Header className="title"><h2>You Can</h2></Header>
-                    <p className="smallText">start by meeting with our team.  We will help create a plan to meet your business’s needs, based on your...</p>
-                </div>
-                <div className="paralaxs">
-                    <div className="flex-row">
-                        <Header className="blue">Goals</Header>
-                        <div className="goalParalax">
-                            <img alt='img' width="300px" src={goal} />
-                            <Parallax className="paralax" y={[100, -300]} x={[80, -30]} tagOuter="figure">
-                                <img alt='img' width="50px" src={ball} />
-                            </Parallax>
-                        </div>
-                    </div>
-                    <div className="flex-row">
-                        <div className="audienceParalax">
-                            <div class='stage'>
-                                <div className='stageImgOne'> 
-                                    <Parallax className="paralax" x={[-20, -75]} tagOuter="figure" >
-                                        <img alt='img' className='stageImgTwo' width="150px" src={stageMiddle} />
-                                    </Parallax>
-                                    <Parallax className="paralax" x={[0, 75]} tagOuter="figure">
-                                        <img alt='img' className='stageImgThree right' width="150px" src={stageMiddle} />
-                                    </Parallax>
-                                    <img alt='img' className='stageImgFour' width="300px" src={stageFront} />
-                                </div>
-                            </div>
-                        </div>
-                        <Header className="blue">Audience</Header>
-                    </div>
-                    <div className="flex-row">
-                        <Header className="blue">And Timeline</Header>
-                        <div className="timelineParalax">
-                            <img alt='img' width="300px" src={timeline} />
-                            <Parallax className="paralax" x={[-50, 50]} tagOuter="figure">
-                                <img alt='img' class="face" width="50px" src={face} />
-                            </Parallax>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {!submitted ? <div className="container">
-                {/* <Form submit={onSubmit} inputs={["Name", "Phone", "Email"]} idNames= {["name", "phone", "email"]}></Form> */}
-                <ContactForm submit={onSubmit} />
-            </div>: <> </>}
+            {!submitted ?
+                <ContactForm submit={onSubmit} inputs={["Name", "Phone", "Email"]} idNames= {["name", "phone", "email"]}></ContactForm>
+            : <div> </div>}
         </main>
 
     )
