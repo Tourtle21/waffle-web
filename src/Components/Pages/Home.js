@@ -22,12 +22,7 @@ const Home = (props) => {
     const closeModal = () => {setOpen(false); document.body.style.overflow = "visible"};
 
     const onSubmit = (data) => {
-        axios.post('/email', data)
-        .then(() => {
-            setSubmitted(true);
-        }).catch((err) => {
-            console.log(err);
-        })
+        setSubmitted(true);
     }
 
     const resetVideo = (e) => {
@@ -56,7 +51,7 @@ const Home = (props) => {
             </div>
             {!submitted ?
                 <ContactForm submit={onSubmit} inputs={["Name", "Phone", "Email"]} idNames= {["name", "phone", "email"]}></ContactForm>
-            : <div> </div>}
+            : <div>Thanks! We will get back to your ASAP! </div>}
         </main>
 
     )
