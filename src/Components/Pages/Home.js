@@ -38,7 +38,7 @@ const Home = (props) => {
             <div className="cont">
                 <Header className="start">Our Work</Header>
                 
-            <video className="video" onClick={(e) => {setOpen(o => !o); document.body.style.overflow = "hidden";}} onMouseEnter={(e) => {e.target.play(); e.target.playbackRate = 10;}} onMouseLeave={(e) => resetVideo(e)} width="320" height="240" muted="muted" >
+            <video className="video" onClick={(e) => {setOpen(o => !o); document.body.style.overflow = "hidden";}} onMouseEnter={(e) => {e.target.play(); e.target.playbackRate = 10;}} onMouseLeave={(e) => resetVideo(e)} width="320" height="240" muted="muted" playsinline>
       <source src={trulyYours} type='video/mp4' />
     </video>
     <Popup open={open} closeOnDocumentClick onClose={closeModal}>
@@ -51,7 +51,7 @@ const Home = (props) => {
             </div>
             {!submitted ?
                 <ContactForm submit={onSubmit} inputs={["Name", "Phone", "Email"]} idNames= {["name", "phone", "email"]}></ContactForm>
-            : <div>Thanks! We will get back to your ASAP! </div>}
+            : <div className="thanks">Thanks! We will get back to your ASAP! </div>}
         </main>
 
     )

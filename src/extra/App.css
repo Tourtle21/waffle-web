@@ -65,7 +65,15 @@ align-items: center;
   height:100%;
   margin-top: 50px;
 }
-
+.thanks{
+  position: relative;
+    height: 400px;
+    background-color: #f3f3f3;
+    color: #01002b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .modal {
   font-size: 12px;
   background-image: url(../Assets/yourstruly.jpeg);
