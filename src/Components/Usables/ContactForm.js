@@ -1,16 +1,11 @@
-// Make sure to run npm install @formspree/react
-// For more help visit https://formspr.ee/react-help
-
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
-import Contact from '../Pages/Contact';
 import Form from '../Styles/Form'
 import Header from '../Styles/Header'
 import Input from '../Styles/Input'
 import Button from '../Styles/Button';
-import { useHistory } from "react-router-dom";
+
 const ContactForm = (props) => {
-  let history = useHistory();
   const [state, handleSubmit] = useForm("xzbyewko");
 
   if (state.succeeded) {

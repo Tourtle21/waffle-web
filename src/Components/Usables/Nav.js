@@ -7,7 +7,7 @@ const Nav = (props) => {
         <header>
             <div className='nav'>
                 <Navbar>
-                    <Link to='/'><div className="logo"><img width="30px" src="./logo.png" /> <h1>WaffleTech</h1></div></Link>
+                    <Link to='/'><div className="logo"><img alt="logo" width="30px" src="./logo.png" /> <h1>WaffleTech</h1></div></Link>
                     <ul className="links">
                         <Link to='/contact'><li>Contact Us</li></Link>
                     </ul>

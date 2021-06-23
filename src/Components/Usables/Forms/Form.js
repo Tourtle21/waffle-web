@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import Input from "./Input";
 import Button from "../../Styles/Button";
 import StyledForm from "../../Styles/Form";
