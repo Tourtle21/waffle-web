@@ -1,9 +1,9 @@
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
-import Form from '../Styles/Form'
-import Header from '../Styles/Header'
-import Input from '../Styles/Input'
-import Button from '../Styles/Button';
+import Form from '../styles/Form'
+import Header from '../styles/Header'
+import Input from '../styles/Input'
+import Button from '../styles/Button';
 
 const ContactForm = (props) => {
   const [state, handleSubmit] = useForm("xzbyewko");
