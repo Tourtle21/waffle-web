@@ -4,15 +4,16 @@
   "private": true,
   "homepage": "https://Tourtle21.github.io/",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next",
     "build": "next build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d .next",
+    "predeploy": "next build",
+    "deploy": "next build && next export && git add out/ && git commit -m \"Deploy gh-pages\" && git subtree push --prefix out origin gh-pages",
     "start": "next start"
   },
   "dependencies": {
     "@formspree/react": "^2.2.4",
-    "next": "^11.0.0",
+    "next": "^11.1.4",
+    "next-optimized-images": "^2.6.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "styled-components": "^5.3.3"
