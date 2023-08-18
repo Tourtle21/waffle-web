@@ -9,7 +9,7 @@ const Hero = () => {
         <div id='hero'>
             <h1>Custom Web Design</h1>
             <p class="cards-text" id="cards-text">
-                Join us on a journey to success
+                Join us on a journey to success!
             </p>
             <Button onClick={() => window.scrollTo(0,document.body.scrollHeight)}>Get Started</Button>
             <div class='squares yellow square1'></div>
