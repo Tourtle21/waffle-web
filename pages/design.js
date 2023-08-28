@@ -84,7 +84,7 @@ const [scroll, setScroll] = useState(false);
         <div className="container-filler"></div>
         <div className="container black">
           {!submitted ?
-                <ContactForm submit={onSubmit} background="black" home={false} title="Don't settle for a mediocre website that fails to capture your brand's essence." inputs={["Name", "Phone", "Email"]} idNames= {["name", "phone", "email"]}></ContactForm>
+                <ContactForm submit={onSubmit} background="black" home={false} title="Don't settle for a mediocre website that fails to capture your brand's essence" inputs={["Name", "Phone", "Email"]} idNames= {["name", "phone", "email"]}></ContactForm>
             : <div className="thanks">Thanks! We will get back to you ASAP! </div>}
         </div>
         {scroll < checkpoint5 && <div className="blur"></div>}

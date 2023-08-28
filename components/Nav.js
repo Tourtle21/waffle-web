@@ -38,7 +38,7 @@ const Nav = (props) => {
                         <div className='hamburger-line'></div>
                     </div>
                 </div>
-                <ul id="hidden-list" style={{height: isOpen ? "80px" : "0"}}>
+                <ul id="hidden-list" style={{height: isOpen ? "110px" : "0"}}>
                     <li onClick={() => {setIsOpen(false); router.push('/design');}}  className="navlink">Design</li>
                     <li onClick={() => {setIsOpen(false); router.push('/development');}}  className="navlink">Development</li>
                     <li onClick={() => {setIsOpen(false); router.push('/branding');}}  className="navlink">Branding</li>

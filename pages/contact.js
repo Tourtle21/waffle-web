@@ -13,7 +13,7 @@ const onSubmit = (data) => {
       <div className="home">
         <div class='black center right'>
         <div id='hero'>
-            <h1 class="hero-header">Contact Us.</h1>
+            <h1 class="hero-header">Contact Us</h1>
             <p class="hero-paragraph">
             Whether you are a new or continuing partner, your satisfaction is our greatest concern. You can count on us for a fast and comprehensive reply! 
             </p>

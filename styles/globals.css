@@ -69,6 +69,7 @@ html{
 #hidden-list .navlink {
   border-top: 2px solid black;
   margin-left: 0;
+  padding:7px;
 }
 #hidden-list .navlink:hover{
   background: rgba(0, 0, 0, 0.293);

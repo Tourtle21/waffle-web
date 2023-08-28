@@ -15,12 +15,6 @@ const onSubmit = (data) => {
 }
   return (
     <div className="home">
-      <Head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <title>Custom Web Design | Web Design | Web Development | Branding</title>
-      <link rel="icon" type="image/x-icon" href="/images/logo.png"></link>
-      </Head>
-
       <div class='black center right'>
         <div id='hero' className="main-hero">
             <h1 class="hero-header">Custom Web Design</h1>
@@ -73,7 +67,7 @@ business
 
         <div className="black">
           <div id="hero" className="hero-nocolor">
-          <h1 class="hero-header">Our Mission.</h1>
+          <h1 class="hero-header">Our Mission</h1>
           <p class="hero-paragraph">
           We help entrepreneurs build their dream businesses, support their missions, and expand their capacity. Our goal is to help your website, brand, and business succeed. Why? Because we succeed when you do.
             </p>
