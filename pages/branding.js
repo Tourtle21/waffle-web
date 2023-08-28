@@ -1,42 +1,91 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Link from 'next/link'
+import Image from 'next/image';
 import ContactForm from '../components/ContactForm'
 export default function Home() {
-  const [submitted, setSubmitted] = useState(false);
-  const resetVideo = (e) => {
-    e.target.currentTime = 0;
-    e.target.pause();
-}
+  const [submitted, setSubmitted] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [checkpoint2, setCheckpoint2] = useState(129);
+  const [checkpoint3, setCheckpoint3] = useState(394);
+  const [checkpoint4, setCheckpoint4] = useState(694);
+  const [checkpoint5, setCheckpoint5] = useState(944);
+
 const onSubmit = (data) => {
   setSubmitted(true);
 }
+
+function handleWindowSizeChange() {
+  setIsMobile(window.innerWidth < 750);
+  if (window.innerWidth < 750) {
+    setCheckpoint2(494);
+    setCheckpoint3(794);
+    setCheckpoint4(1144);
+    setCheckpoint5(1294);
+  } else {
+    setCheckpoint2(129);
+    setCheckpoint3(394);
+    setCheckpoint4(694);
+    setCheckpoint5(944);
+  }
+}
+
+const [scroll, setScroll] = useState(false);
+ useEffect(() => {
+   window.addEventListener("scroll", () => {
+     setScroll(window.scrollY);
+   });
+   handleWindowSizeChange();
+   window.addEventListener('resize', handleWindowSizeChange);
+    return () => {
+        window.removeEventListener('resize', handleWindowSizeChange);
+        window.removeEventListener("scroll", () => {
+          setScroll(window.scrollY);
+        });
+    }
+ }, []);
+
   return (
     <div className="home">
-      <div className="service-hero">
-          <div className="service-title">
-              <div className="service-header">Branding</div>
-              <div className="service-subheader">Build trust, and grow your business with a brand that works</div>
-              <div className="service-text">We know you need to create a strong, positive perception for your company, this is acheived by combining elements such as logo, design, mission statement, and a consistent theme, whatever you need, we've got you covered.</div>
+      <div class='black center movable' style={{position: `${scroll > checkpoint2 && !isMobile ?'fixed': 'relative'}`, top: `${scroll > checkpoint5 ? checkpoint5 - scroll : '0'}px`}}>
+        <div id='hero' class="servicehero hero-yellow">
+            <h1 class="hero-header">Branding</h1>
+            <p class="hero-paragraph">
+            Are you looking for ways to build brand recognition and trust with your customers? Or perhaps you want to increase customer loyalty and differentiate your business from your competitors?
+            </p>
+        </div>
+        </div>
+
+        <div className="container main-container" style={{position:`${isMobile ? 'absolute' : scroll > checkpoint2 ? 'fixed' : 'relative'}`, top: `${isMobile ? 'initial' : scroll > checkpoint2 && scroll < checkpoint5 ? '290px': scroll > checkpoint5 ? checkpoint5 - scroll + 290 + "px" : '0px'}`}}>
+          <h1 className="scroll-header">We Specialize In...</h1>
+          <div className="info">
+              <div className="info-image-text" style={{top: `-${scroll}px`, opacity: scroll > checkpoint2 ? `${(50 - (scroll - checkpoint2)) / 100}` : 1}}>
+              <div className="service-image"><Image src='/images/branding.png' width="450" height="370" /></div>
+                <p>We understand that a strong brand is crucial for building recognition and trust with your customers. That's why we specialize in delivering high-quality products or services with a recognizable brand identity that resonates with your target audience. By consistently delivering on your brand promise, we'll help you gain the trust of your customers and position your business as a leader in your industry.</p>
+              </div>
+
+              <div className="info-image-text" style={{top: `-${scroll}px`, opacity: scroll > checkpoint3 ? `${(50 - (scroll - checkpoint3)) / 100}` : 1}}>
+              <div className="service-image"><Image src='/images/circles.png' width="570" height="500" /></div>
+                <p>But building trust is just the beginning. We'll also help you increase customer loyalty by creating an emotional connection with your audience. By developing a brand that resonates with your customers on a deeper level, we'll help you create repeat business and generate positive word-of-mouth marketing.</p>
+              </div>
+
+              <div className="info-image-text" style={{top: `-${scroll}px`, opacity: scroll > checkpoint4 ? `${(50 - (scroll - checkpoint4)) / 100}` : 1}}>
+              <div className="service-image"><Image src='/images/arrows.png' width="420" height="420" /></div>
+                <p>And let's not forget about the competition. Our unique and well-developed brand strategies will help you differentiate your business from competitors, making it easier for customers to remember and choose you over others.</p>
+              </div>
+
+              <div className="info-image-text" style={{top: `-${scroll > checkpoint5 ? checkpoint5 : scroll}px`}}>
+              <div className="service-image"><Image src='/images/tags.png' width="470" height="620" /></div>
+                <p>Finally, our branding services can help increase the perceived value of your products or services, which can lead to higher profits and a stronger reputation in the market. By creating a strong brand that customers perceive as trustworthy and of high quality, they may be willing to pay a premium price for your offerings.</p>
+              </div>
           </div>
-          <div className="designImg img-blue"></div>
-      </div>
-      <div className="servicecont"><h1>Branding</h1></div>
-      <div className="serviceBox red first">
-          <div>First,</div>
-          <div>We'll set up a time for you to meet with our team, so we can get to know you and your business, we'll figure out your needs, and your audience so we know what we can do, and the brand and style to match your Idea.</div>
-      </div>
-      <div className="serviceBox blue second">
-          <div>Then,</div>
-          <div>We'll get to work, we'll impliment the industries best practices, so you end up with a product using the newest cutting edge technologies. Our goal is to see you succeed, so we'll work on your business like it's our own, and give you an edge over the competition. </div>
-      </div>
-      <div className="serviceBox green third">
-          <div>Finally,</div>
-          <div>We'll deliver our results, we'll walk you through everything we did, and everything you can expect to see happen from it. We'll answer any of the questions that you have, and we'll keep in touch to ensure your continued success.</div>
-      </div>
-      <Link href='/contact'><div className='serviceButton'>Let's Get Started</div></Link>
-        {!submitted ?
-                <ContactForm submit={onSubmit} inputs={["Name", "Phone", "Email"]} idNames= {["name", "phone", "email"]}></ContactForm>
+        </div>
+        <div className="container-filler"></div>
+        <div className="container black">
+          {!submitted ?
+                <ContactForm submit={onSubmit} home={false} background="black" title="Don't settle for a mediocre website that fails to capture your brand's essence." inputs={["Name", "Phone", "Email"]} idNames= {["name", "phone", "email"]}></ContactForm>
             : <div className="thanks">Thanks! We will get back to you ASAP! </div>}
+        </div>
+        {scroll < checkpoint5 && <div className="blur"></div>}
     </div>
   )
 }

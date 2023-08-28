@@ -14,7 +14,9 @@ const ContactForm = (props) => {
 
   return (
       <Form onSubmit={handleSubmit}>
-        <Header>Let's Get Started</Header>
+        <Header>{props.title}</Header>
+        <p class="hero-paragraph">{props.home ? "It’s really simple. Just fill out your contact information, give us a short description of what you want to accomplish, and we will contact you within 24 hrs!" : "Contact us today to learn more about our web design services and how we can help take your business to the next level! Just fill out your contact information, give us a short description of what you want to accomplish, and we will contact you within 24 hrs!"}</p>
+
       <div className="inputs">
       <div className="infoInputs">
       <Input
@@ -22,6 +24,7 @@ const ContactForm = (props) => {
         type="name" 
         name="name"
         placeholder="Name"
+        style={{background: props.background, color: props.background === "white" ? "black" : "white"}}
         required
       />
       <Input
@@ -29,6 +32,7 @@ const ContactForm = (props) => {
         type="phone number" 
         name="phone number"
         placeholder="Phone"
+        style={{background: props.background, color: props.background === "white" ? "black" : "white"}}
         required
       />
       <Input
@@ -36,6 +40,7 @@ const ContactForm = (props) => {
         type="email" 
         name="email"
         placeholder="Email"
+        style={{background: props.background, color: props.background === "white" ? "black" : "white"}}
         required
       />
       <ValidationError 
@@ -50,6 +55,7 @@ const ContactForm = (props) => {
         id="message"
         name="message"
         placeholder="Description"
+        style={{background: props.background, color: props.background === "white" ? "black" : "white"}}
       />
       <ValidationError 
         prefix="Message" 

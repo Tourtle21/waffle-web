@@ -11,11 +11,20 @@ const onSubmit = (data) => {
   }
     return (
       <div className="home">
-          <div className="contactpage">
+        <div class='black center right'>
+        <div id='hero'>
+            <h1 class="hero-header">Contact Us.</h1>
+            <p class="hero-paragraph">
+            Whether you are a new or continuing partner, your satisfaction is our greatest concern. You can count on us for a fast and comprehensive reply! 
+            </p>
+        </div>
+        </div>
           {!submitted ?
-                  <ContactForm submit={onSubmit} inputs={["Name", "Phone", "Email"]} idNames= {["name", "phone", "email"]}></ContactForm>
+                  <ContactForm submit={onSubmit} background="white" home={true} inputs={["Name", "Phone", "Email"]} idNames= {["name", "phone", "email"]}></ContactForm>
               : <div className="thanks">Thanks! We will get back to you ASAP! </div>}
-           </div>
+        <div id="thank-you">
+          <h1 class="hero-header">Thank you.</h1>  
+        </div>
       </div>
     )
   }

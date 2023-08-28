@@ -1,11 +1,15 @@
 
 import React from 'react';
+import Link from 'next/link'
+import Image from 'next/image';
 
 
 const Footer = (props) => {
     return (
         <footer>
-           © 2021 WaffleTech
+           <div className="logo-footer-box">
+                    <Link href='/'><Image id="logo" layout="fill" src='/images/wafflelogo-black.png' /></Link>
+            </div>
         </footer>
 
     )
